@@ -3,7 +3,11 @@ FROM php:cli
 ENV HOME /root
 
 RUN apt-get update -qq && \
-	apt-get install -y -qq sudo git curl && \
+	apt-get install -y -qq sudo \
+		git-core \
+		zlib1g zlib1g-dev \
+		curl && \
+	docker-php-ext-install zip && \
 	apt-get -y clean
 
 
