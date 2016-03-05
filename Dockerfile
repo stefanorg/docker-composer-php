@@ -7,7 +7,7 @@ RUN apt-get update -qq && \
 		git-core \
 		zlib1g zlib1g-dev \
 		curl && \
-	docker-php-ext-install zip && \
+	docker-php-ext-install zip mbstring && \
 	apt-get -y clean
 
 
